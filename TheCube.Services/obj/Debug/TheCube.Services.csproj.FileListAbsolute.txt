@@ -1,0 +1,9 @@
+C:\SF.Code\TheCube\TheCube.Services\bin\Debug\TheCube.Services.dll
+C:\SF.Code\TheCube\TheCube.Services\bin\Debug\TheCube.Services.pdb
+C:\SF.Code\TheCube\TheCube.Services\obj\Debug\TheCube.Services.csproj.CoreCompileInputs.cache
+C:\SF.Code\TheCube\TheCube.Services\obj\Debug\TheCube.Services.dll
+C:\SF.Code\TheCube\TheCube.Services\obj\Debug\TheCube.Services.pdb
+C:\SF.Code\TheCube\TheCube.Services\obj\Debug\TheCube.Services.csprojAssemblyReference.cache
+C:\SF.Code\TheCube\TheCube.Services\bin\Debug\TheCube.Models.dll
+C:\SF.Code\TheCube\TheCube.Services\bin\Debug\TheCube.Models.pdb
+C:\SF.Code\TheCube\TheCube.Services\obj\Debug\TheCube.Services.csproj.CopyComplete

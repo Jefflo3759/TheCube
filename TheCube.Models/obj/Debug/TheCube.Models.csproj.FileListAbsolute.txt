@@ -1,0 +1,5 @@
+C:\SF.Code\TheCube\TheCube.Models\bin\Debug\TheCube.Models.dll
+C:\SF.Code\TheCube\TheCube.Models\bin\Debug\TheCube.Models.pdb
+C:\SF.Code\TheCube\TheCube.Models\obj\Debug\TheCube.Models.csproj.CoreCompileInputs.cache
+C:\SF.Code\TheCube\TheCube.Models\obj\Debug\TheCube.Models.dll
+C:\SF.Code\TheCube\TheCube.Models\obj\Debug\TheCube.Models.pdb
