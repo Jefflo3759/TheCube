@@ -1,8 +1,13 @@
 * {
   box-sizing: border-box;
   --backdrop: #1e2428;
+  --white: 255, 255, 255;
+  --black: 0, 0, 0;
+  --yellow: 255, 255, 0;
   --blue: 108, 174, 221;
   --red: 221, 0, 49;
+  --gray: 192, 192, 192;
+  --brown: 165, 42, 42;
   --purple: 173, 120, 220;
   --green: 65, 184, 131;
   --square-alpha: 0.8;
@@ -13,6 +18,9 @@
 #app {
   background-color: var(--backdrop);
   height: 100vh;
+  width: 250vh;
+  background-size: 100%;
+  background-image: url("https://wallpaperstudio10.com/static/wpdb/wallpapers/3840x2160/173012.jpg");
 }
 .main {
   height: 100%;
@@ -20,10 +28,20 @@
   perspective: 1200px;
   user-select: none;
 }
+.northWest {
+  position: absolute;
+  top: calc(50% -2em);
+  left: calc(50% + 0em);
+}
 .north {
   position: absolute;
-  top: calc(50% - 3em);
-  left: calc(50% - 1em);
+  top: calc(50% - 1em);
+  left: calc(50% + -1em);
+}
+.northEast {
+  position: absolute;
+  top: calc(50% - 2em);
+  left: calc(50% = 0em);
 }
 .south {
   position: absolute;
@@ -35,10 +53,20 @@
   top: calc(50% - 1em);
   left: calc(50% - 3em);
 }
+.southEast {
+  position: absolute;
+  top: calc(50% - 0em);
+  left: calc(50% + 0em);
+}
 .west {
   position: absolute;
   top: calc(50% - 1em);
   left: calc(50% + 1em);
+}
+.southWest {
+  position: absolute;
+  top: calc(50% + 0em);
+  left: calc(50% + 0em);
 }
 
 .cube {
@@ -75,6 +103,26 @@
 .red {
   background-color: rgba(var(--red), var(--square-alpha));
   box-shadow: var(--square-glow) rgba(var(--red), var(--glow-alpha));
+}
+.black {
+  background-color: rgba(var(--black), var(--square-alpha));
+  box-shadow: var(--square-glow) rgba(var(--black), var(--glow-alpha));
+}
+.white {
+  background-color: rgba(var(--white), var(--square-alpha));
+  box-shadow: var(--square-glow) rgba(var(--white), var(--glow-alpha));
+}
+.brown {
+  background-color: rgba(var(--brown), var(--square-alpha));
+  box-shadow: var(--square-glow) rgba(var(--brown), var(--glow-alpha));
+}
+.yellow {
+  background-color: rgba(var(--yellow), var(--square-alpha));
+  box-shadow: var(--square-glow) rgba(var(--yellow), var(--glow-alpha));
+}
+.gray {
+  background-color: rgba(var(--gray), var(--square-alpha));
+  box-shadow: var(--square-glow) rgba(var(--gray), var(--glow-alpha));
 }
 .purple {
   background-color: rgba(var(--purple), var(--square-alpha));

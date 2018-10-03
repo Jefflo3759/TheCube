@@ -31,7 +31,8 @@ class CubeQuiz extends React.Component {
     UserName: "",
     editShow: false,
     showPostInput: true,
-    showInputeditNameChange: false
+    showInputeditNameChange: false,
+    cubeColor: ""
   };
 
   componentDidMount() {
@@ -48,10 +49,71 @@ class CubeQuiz extends React.Component {
   }
 
   handleAnswerTypeChange = event => {
-    this.setState({
-      currentAnswer: event.target.value,
-      submitDisabled: false
-    });
+    this.setState(
+      {
+        currentAnswer: event.target.value,
+        submitDisabled: false
+      },
+      () => {
+        if (
+          this.state.currentAnswer ===
+          "Your Cube represents you!  You are serene, cool, spiritual, electric, loyal, distant, aloof, and sad. "
+        ) {
+          this.setState({
+            cubeColor: "blue"
+          });
+        } else if (
+          this.state.currentAnswer ===
+          "Your Cube represents you!  You are hopeful, optimistic, ever-reviving, nature-loving, ecologically aware, grass-smoker, and wealthy. "
+        ) {
+          this.setState({
+            cubeColor: "green"
+          });
+        } else if (
+          this.state.currentAnswer ===
+          "Your Cube represents you!  You are conservative, neutral, fair, just, ambivalent, fanctual, subtle, and sometimes bored. "
+        ) {
+          this.setState({
+            cubeColor: "gray"
+          });
+        } else if (
+          this.state.currentAnswer ===
+          "Your Cube represents you!  You are earthly, warm, serious, and studios. "
+        ) {
+          this.setState({
+            cubeColor: "brown"
+          });
+        } else if (
+          this.state.currentAnswer ===
+          "Your Cube represents you!  You love attention. "
+        ) {
+          this.setState({
+            cubeColor: "yellow"
+          });
+        } else if (
+          this.state.currentAnswer ===
+          "Your Cube represents you!  You are stylish, stark, mysterious, guarded, self-contained, and drawn to the dark side"
+        ) {
+          this.setState({
+            cubeColor: "black"
+          });
+        } else if (
+          this.state.currentAnswer ===
+          "You strive for high status and want to be treated like royalty. "
+        ) {
+          this.setState({
+            cubeColor: "purple"
+          });
+        } else if (
+          this.state.currentAnswer ===
+          "You are warm hearted, hot-tempered, passionate, courageous, aggressive, revolutionary. "
+        ) {
+          this.setState({
+            cubeColor: "red"
+          });
+        }
+      }
+    );
   };
   //gen lib es bing
   handleSubmit = event => {
@@ -132,14 +194,42 @@ class CubeQuiz extends React.Component {
   render() {
     const { getAllData } = this.state;
     return (
-      <div style={{ backgroundColor: "black", color: "white", fontSize: 25 }}>
+      <div style={{ backgroundColor: "black", color: "white", fontSize: 35 }}>
         <Row className="card-header justify-content-center">
           <h1> The Cube</h1>
         </Row>
         {this.state.questionShow < 18 && (
           <div>
             <div id="app">
-              <div className="main rotateAnimation">
+              {this.state.cubeColor === "" && (
+                <div className="north container" tabIndex="0">
+                  <div className="cube animation">
+                    <div className="white color">
+                      <div className="square top" />
+                      <div className="square bottom" />
+                      <div className="square left" />
+                      <div className="square right" />
+                      <div className="square back" />
+                      <div className="square front" />
+                    </div>
+                  </div>
+                </div>
+              )}
+              {this.state.cubeColor === "red" && (
+                <div className="north container" tabIndex="0">
+                  <div className="cube animation">
+                    <div className="red color">
+                      <div className="square top" />
+                      <div className="square bottom" />
+                      <div className="square left" />
+                      <div className="square right" />
+                      <div className="square back" />
+                      <div className="square front" />
+                    </div>
+                  </div>
+                </div>
+              )}
+              {this.state.cubeColor === "blue" && (
                 <div className="north container" tabIndex="0">
                   <div className="cube animation">
                     <div className="blue color">
@@ -152,19 +242,9 @@ class CubeQuiz extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="south container" tabIndex="1">
-                  <div className="cube animation">
-                    <div className="red color">
-                      <div className="square top" />
-                      <div className="square bottom" />
-                      <div className="square left" />
-                      <div className="square right" />
-                      <div className="square back" />
-                      <div className="square front" />
-                    </div>
-                  </div>
-                </div>
-                <div className="east container" tabIndex="2">
+              )}
+              {this.state.cubeColor === "green" && (
+                <div className="north container" tabIndex="0">
                   <div className="cube animation">
                     <div className="green color">
                       <div className="square top" />
@@ -176,7 +256,9 @@ class CubeQuiz extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="west container" tabIndex="3">
+              )}
+              {this.state.cubeColor === "purple" && (
+                <div className="north container" tabIndex="0">
                   <div className="cube animation">
                     <div className="purple color">
                       <div className="square top" />
@@ -188,9 +270,78 @@ class CubeQuiz extends React.Component {
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
+              {this.state.cubeColor === "white" && (
+                <div className="north container" tabIndex="0">
+                  <div className="cube animation">
+                    <div className="white color">
+                      <div className="square top" />
+                      <div className="square bottom" />
+                      <div className="square left" />
+                      <div className="square right" />
+                      <div className="square back" />
+                      <div className="square front" />
+                    </div>
+                  </div>
+                </div>
+              )}
+              {this.state.cubeColor === "black" && (
+                <div className="north container" tabIndex="0">
+                  <div className="cube animation">
+                    <div className="black color">
+                      <div className="square top" />
+                      <div className="square bottom" />
+                      <div className="square left" />
+                      <div className="square right" />
+                      <div className="square back" />
+                      <div className="square front" />
+                    </div>
+                  </div>
+                </div>
+              )}
+              {this.state.cubeColor === "yellow" && (
+                <div className="north container" tabIndex="0">
+                  <div className="cube animation">
+                    <div className="yellow color">
+                      <div className="square top" />
+                      <div className="square bottom" />
+                      <div className="square left" />
+                      <div className="square right" />
+                      <div className="square back" />
+                      <div className="square front" />
+                    </div>
+                  </div>
+                </div>
+              )}
+              {this.state.cubeColor === "brown" && (
+                <div className="north container" tabIndex="0">
+                  <div className="cube animation">
+                    <div className="brown color">
+                      <div className="square top" />
+                      <div className="square bottom" />
+                      <div className="square left" />
+                      <div className="square right" />
+                      <div className="square back" />
+                      <div className="square front" />
+                    </div>
+                  </div>
+                </div>
+              )}
+              {this.state.cubeColor === "gray" && (
+                <div className="north container" tabIndex="0">
+                  <div className="cube animation">
+                    <div className="gray color">
+                      <div className="square top" />
+                      <div className="square bottom" />
+                      <div className="square left" />
+                      <div className="square right" />
+                      <div className="square back" />
+                      <div className="square front" />
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
-
             <Row className="card-body ">
               <Col>
                 {this.state.getQuestions.map(question => {
@@ -301,12 +452,16 @@ class CubeQuiz extends React.Component {
           <div>
             {this.state.UserName != "" && (
               <div>
-                <Row>
+                <Row
+                  style={{ marginLeft: 200, marginRight: 200, marginTop: 30 }}
+                >
                   <Col>
                     <div>{this.state.UserName} </div>
                   </Col>
                 </Row>
-                <Row>
+                <Row
+                  style={{ marginLeft: 200, marginRight: 200, marginTop: 30 }}
+                >
                   <Col>
                     <Button color="info" onClick={this.handleEditResultsButton}>
                       Edit Name?
@@ -327,7 +482,11 @@ class CubeQuiz extends React.Component {
                 )}
               </div>
             )}
-            <div className="">{this.state.result}</div>
+            <div>
+              <h3 style={{ marginLeft: 200, marginRight: 200, marginTop: 30 }}>
+                {this.state.result}
+              </h3>
+            </div>
             {this.state.editShow === false &&
               this.state.showPostInput && (
                 <div>
