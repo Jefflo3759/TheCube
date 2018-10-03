@@ -28,8 +28,12 @@ namespace TheCube.Services
                     {
                         CubeDomain cube = new CubeDomain();
                         cube.Id = (int)rdr["Id"];
-                        cube.Size = (int)rdr["Size"];
-                        cube.Color = (int)rdr["Color"];
+                        cube.QuestionId = (int)rdr["QuestionId"];
+                        cube.text = (string)rdr["text"];
+                        cube.DisplayOrder = (int)rdr["DisplayOrder"];
+                        cube.Answer = (string)rdr["Answer"];
+                        cube.Result = (string)rdr["Result"];
+                        cube.Type = (string)rdr["Type"];
                         //cube.Float = (bool)rdr["Float"];
 
                         if (result == null)
@@ -45,5 +49,44 @@ namespace TheCube.Services
             }
         }
 
+        //public static List<ResultsDomain> GetById(int id)
+        //{
+        //    List<Cub>
+        //}
+
+
+        public static List<CubeDomain> GetAllQuestions()
+        {
+            List<CubeDomain> result = null;
+            var connectionString = ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                using (SqlCommand cmd = con.CreateCommand())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "dbo.TheCubeQuestions_SelectAll";
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        CubeDomain cube = new CubeDomain();
+                        cube.Id = (int)rdr["Id"];
+                        cube.text = (string)rdr["text"];
+                        cube.DisplayOrder = (int)rdr["DisplayOrder"];
+                        cube.Type = (string)rdr["Type"];
+               
+
+                        if (result == null)
+                        {
+                            result = new List<CubeDomain>();
+                        }
+                        result.Add(cube);
+
+
+                    }
+                }
+                return result;
+            }
+        }
     }
 }

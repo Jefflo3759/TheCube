@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace TheCube.Models.Request
 {
-    public class TheCubeUpdateRequest : TheCubeCreateRequest
+    public class TheCubeUpdateRequest 
     {
 
         [Required]
         public int Id { get; set; }
+        [Required]
+        public string UserName { get; set; }
  
     }
 }

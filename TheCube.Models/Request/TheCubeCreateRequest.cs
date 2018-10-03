@@ -4,11 +4,10 @@ namespace TheCube.Models.Request
 {
     public class TheCubeCreateRequest
     {
+
         [Required]
-        public int Size { get; set; }
+        public string UserName { get; set; }
         [Required]
-        public int Color { get; set; }
-        [Required]
-        public int Float { get; set; }
+        public string Results { get; set; }
     }
 }

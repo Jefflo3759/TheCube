@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\CubeDomain.cs" />
+    <Compile Include="Domain\ResultsDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request\TheCubeCreateRequest.cs" />
     <Compile Include="Request\TheCubeUpdateRequest.cs" />
